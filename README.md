@@ -9,25 +9,16 @@ Mixies is a fullstack application that provides the user with all of the informa
 Technologies Used:
 <br>
 - HTML
-<br>
 - CSS
-<br>
 - Bootstrap
-<br>
 - Javascript
-<br>
-- Express
-<br>
-- LiquidJS
-<br>
+- Express 
+- LiquidJS 
 - NPM
-<br>
 - Node.js
-<br>
-- MongoDB
-<br>
-<br>
+- MongoDB 
 
+<br>
 Wireframe:
 <br>
 
