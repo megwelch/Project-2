@@ -56,5 +56,10 @@ As a user I want the ability to:
 - leave reviews on all cocktail recipes.
 
 <br>
-Back-Up Idea:
-Dinner recipes
+Plan for the Week:
+- back-end initial set-up and seed complete
+- spirit/cocktail/review controllers set-up
+- user controllers set-up
+- front-end set up
+- styling
+
