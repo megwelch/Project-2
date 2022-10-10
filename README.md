@@ -46,7 +46,6 @@ User Story:
 As a user I want the ability to:
 - sign up.
 - sign in. 
-- sign out. 
 - view a database of cocktails.
 - create my own cocktail recipes. 
 - edit my own cocktail recipes. 
@@ -58,6 +57,7 @@ As a user I want the ability to:
 <br>
 Plan for the Week:
 <br>
+
 - back-end initial set-up and seed complete
 - spirit/cocktail/review controllers set-up
 - user controllers set-up
