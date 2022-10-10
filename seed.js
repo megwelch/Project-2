@@ -1,26 +1,3 @@
-const spirits = [
-    {
-        name: 'Vodka',
-        image: 'image here',
-    },
-    {
-        name: 'Whiskey',
-        image: 'image here',
-    },
-    {
-        name: 'Gin',
-        image: 'image here',
-    },
-    {
-        name: 'Tequila',
-        image: 'image here',
-    },
-    {
-        name: 'Rum',
-        image: 'image here',
-    }
-]
-
 const cocktails = [
     {
         name:'Margarita',

@@ -31,14 +31,18 @@ As a user I want the ability to:
 - delete my own cocktail recipes. 
 - view all of my own cocktail recipes.
 - view recipes others have created.  
-- leave reviews on all cocktail recipes.
+- leave reviews on all cocktail recipes including rating (1-5) and a comment.
+- delete my existing reviews on all cocktail recipes.
 <br>
 <br>
+
 Entity Relationship Diagram:
 <br>
 
 ![erd](./images/erd.png)
 <br>
+<br>
+
 Wireframe:
 <br>
 
@@ -63,4 +67,3 @@ Plan for the Week:
 - user controllers set-up
 - front-end set up
 - styling
-
