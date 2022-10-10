@@ -17,6 +17,10 @@ const cocktailSchema = new Schema(
 		},
         ingredients: Array,
 		recipe: String,
+		owner: {
+			type: Schema.Types.ObjectId,
+			ref: 'User'
+		}
 	},
 	{ timestamps: true }
 )

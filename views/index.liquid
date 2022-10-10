@@ -1,7 +1,23 @@
 {% layout "layout.liquid" %}
 {% block content %}
-
-    <h1>Welcome!</h1>
-
+    {% if cocktails.length > 0%}
+        <div>
+            <h2>Cocktails</h2>
+            <div class="row">
+                {% for cocktail in cocktails %}
+                    <div class="card" style="width: 18rem;">
+                        <h5 class="card-header">{{cocktail.name}}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{cocktail.spirit}}
+                            </h5>
+                            <p class="card-text">{{cocktail.ingredients}}</p>
+                            <p class="card-text">{{cocktail.recipe}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
 
 {% endblock %}

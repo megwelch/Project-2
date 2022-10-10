@@ -26,11 +26,11 @@ db.on('open', () => {
             recipe: 'Add the sugar and bitters into a mixing glass, then add the water, and stir until the sugar is nearly dissolved. Fill the mixing glass with ice, add the bourbon, and stir until well-chille. Strain into a rocks glass over one large ice cube. Express the oil of an orange twist over the glass, then drop into the glass to garnish',
         },
         {
-            // name:'Long Island Iced Tea',
-            // image: '../images/lit',
-            // spirit: ('Vodka', 'Rum', 'Gin', 'Tequila'),
-            // ingredients: ['1/2 oz vodka', '1/2 oz rum', '1/2 oz gin', '1/2 oz tequila', 'lemon', 'coca-cola'],
-            // recipe: 'Combine all ingredients (except coca-cola) and pour over ice in a tall glass then add a splash of coca cola. Garnish with a slice of lemon.',
+            name:'Long Island Iced Tea',
+            image: '../images/lit',
+            spirit: ('Vodka', 'Rum', 'Gin', 'Tequila'),
+            ingredients: ['1/2 oz vodka', '1/2 oz rum', '1/2 oz gin', '1/2 oz tequila', 'lemon', 'coca-cola'],
+            recipe: 'Combine all ingredients (except coca-cola) and pour over ice in a tall glass then add a splash of coca cola. Garnish with a slice of lemon.',
         },
         {
             name:'Cosmopolitan',
