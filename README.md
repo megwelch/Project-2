@@ -17,7 +17,27 @@ Technologies Used:
 - NPM
 - Node.js
 - MongoDB 
+<br>
+<br>
 
+User Story:
+<br>
+As a user I want the ability to:
+- sign up.
+- sign in. 
+- view a database of cocktails.
+- create my own cocktail recipes. 
+- edit my own cocktail recipes. 
+- delete my own cocktail recipes. 
+- view all of my own cocktail recipes.
+- view recipes others have created.  
+- leave reviews on all cocktail recipes.
+<br>
+<br>
+Entity Relationship Diagram:
+<br>
+
+![erd](./images/erd.png)
 <br>
 Wireframe:
 <br>
@@ -34,26 +54,6 @@ Wireframe:
 ![review](./images/review.png)
 ![error](./images/error.png)
 <br>
-<br>
-Entity Relationship Diagram:
-<br>
-
-![edr](./images/EDR.png)
-<br>
-<br>
-User Story:
-<br>
-As a user I want the ability to:
-- sign up.
-- sign in. 
-- view a database of cocktails.
-- create my own cocktail recipes. 
-- edit my own cocktail recipes. 
-- delete my own cocktail recipes. 
-- view all of my own cocktail recipes.
-- view recipes others have created.  
-- leave reviews on all cocktail recipes.
-
 <br>
 Plan for the Week:
 <br>
