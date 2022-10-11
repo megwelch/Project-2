@@ -19,13 +19,20 @@ router.get('/', (req, res) => {
 		.then(cocktails => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
+			const userId = req.session.userId
 
-			res.render('cocktails/index', { cocktails, username, loggedIn })
+			res.render('cocktails/index', { cocktails, loggedIn, userId })
 		})
 		.catch(error => {
 			// console.log(error)
 			res.redirect(`/error?error=${error}`)
 		})
+})
+
+// new route -> GET route that renders our page with the form
+router.get('/new', (req, res) => {
+	const { username, userId, loggedIn } = req.session
+	res.render('cocktails/new', { username, loggedIn, userId })
 })
 
 // index that shows only the user's examples
@@ -43,18 +50,20 @@ router.get('/mine', (req, res) => {
 		})
 })
 
-// new route -> GET route that renders our page with the form
-router.get('/new', (req, res) => {
-	const { username, userId, loggedIn } = req.session
-	res.render('cocktails/new', { username, loggedIn })
-})
-
 // create -> POST route that actually calls the db and makes a new document
 router.post('/', (req, res) => {
 	req.body.owner = req.session.userId
+	const ingArr = req.body.ingredients.split(',')
+	req.body.ingredients = ingArr
+	let spirit = req.body.spirit
+	req.body.spirit = spirit.charAt(0).toUpperCase() + spirit.slice(1)
+	console.log('this is the request body in create', req.body)
 	Cocktail.create(req.body)
 		.then(cocktail => {
-			console.log('this was returned from create', cocktail)
+			const username = req.session.username
+            const loggedIn = req.session.loggedIn
+            const userId = req.session.userId
+			// console.log('this was returned from create', cocktail)
 			res.redirect('/cocktails')
 		})
 		.catch(error => {

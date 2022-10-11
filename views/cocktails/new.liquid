@@ -19,14 +19,18 @@
                 class="form-control"
             >
             <label class="form-label">Ingredients:</label>
+            <small>Add each ingredient separated by a comma</small>
             <input 
                 id="ingredients"
                 type="text" 
                 name="ingredients" 
                 class="form-control"
             >
-            <input id="ingredients-btn" type="submit" value="Add Ingredient" class="btn btn-success">
-            <ul></ul>
+            
+            {%- comment -%} {% assign ingredientsArray = ingredientsArray | push:  %} {%- endcomment -%}
+            {%- comment -%} <input id="ingredients-btn" type="" value="Add Ingredient" class="btn btn-success"> {%- endcomment -%}
+            {%- comment -%} <button></button> {%- endcomment -%}
+            {%- comment -%} <ul></ul> {%- endcomment -%}
             <label class="form-label">Recipe:</label>
             <input 
                 type="text" 
@@ -34,7 +38,7 @@
                 class="form-control"
             >
         </fieldset>
-        <input type="submit" value="Create New Example" class="btn btn-success">
+        <input type="submit" value="Create New Cocktail" class="btn btn-success">
     </form>
 </div>
 {% endblock %}

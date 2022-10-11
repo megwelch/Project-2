@@ -62,7 +62,7 @@ db.on('open', () => {
         },
         {
             name:'Mojito',
-            image: '../images/mojito',
+            image: 'https://imgur.com/ULXmhZC',
             spirit: 'Rum',
             ingredients: ['2 oz light rum', '5 mint leaves', '1/2 oz simple syrup', '3/4 oz lime juice', 'club soda'],
             recipe: 'Lightly muddle the mint with the simple syrup in a shaker. Add the rum, lime juice and ice, and give it a brief shake, then strain into a tall glass over fresh ice. Top with club soda then garnish with a mint sprig and lime wedge.',
