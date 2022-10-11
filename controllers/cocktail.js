@@ -30,9 +30,6 @@ router.get('/', (req, res) => {
 
 // index that shows only the user's examples
 router.get('/mine', (req, res) => {
-    // destructure user info from req.session
-    // const { username, userId, loggedIn } = req.session
-	
 	Cocktail.find({ owner: req.session.userId })
 		.then(cocktails => {
 			const username = req.session.username
@@ -54,13 +51,11 @@ router.get('/new', (req, res) => {
 
 // create -> POST route that actually calls the db and makes a new document
 router.post('/', (req, res) => {
-	req.body.ready = req.body.ready === 'on' ? true : false
-
 	req.body.owner = req.session.userId
-	Example.create(req.body)
-		.then(example => {
-			console.log('this was returned from create', example)
-			res.redirect('/examples')
+	Cocktail.create(req.body)
+		.then(cocktail => {
+			console.log('this was returned from create', cocktail)
+			res.redirect('/cocktails')
 		})
 		.catch(error => {
 			res.redirect(`/error?error=${error}`)
