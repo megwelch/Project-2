@@ -14,10 +14,9 @@ const router = express.Router()
 // Routes
 ////////////////////////////////////////////
 // index ALL
-router.get('/', (req, res) => {
-	// const spirit = req.body
-	// console.log(spirit)
-	Cocktail.find({'spirit': 'Vodka'})
+router.get('/byspirit', (req, res) => {
+	const spirit = req.query.spirit
+	Cocktail.find({'spirit': spirit})
 		.then(cocktails => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn

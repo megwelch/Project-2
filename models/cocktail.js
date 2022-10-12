@@ -13,7 +13,7 @@ const cocktailSchema = new Schema(
 		image: String,
 		spirit: { 
 			type: String, 
-			enum: ['Gin', 'Rum', 'Tequila', 'Vodka', 'Whiskey'], 
+			enum: ['gin', 'rum', 'tequila', 'vodka', 'whiskey'], 
 		},
         ingredients: Array,
 		recipe: String,
