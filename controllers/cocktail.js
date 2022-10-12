@@ -71,8 +71,8 @@ router.post('/', (req, res) => {
 	req.body.owner = req.session.userId
 	const ingArr = req.body.ingredients.split(',')
 	req.body.ingredients = ingArr
-	let spirit = req.body.spirit
-	req.body.spirit = spirit.charAt(0).toUpperCase() + spirit.slice(1)
+	// let spirit = req.body.spirit
+	// req.body.spirit = spirit.charAt(0).toUpperCase() + spirit.slice(1)
 	console.log('this is the request body in create', req.body)
 	Cocktail.create(req.body)
 		.then(cocktail => {
@@ -87,57 +87,63 @@ router.post('/', (req, res) => {
 		})
 })
 
-// // edit route -> GET that takes us to the edit form view
-// router.get('/:id/edit', (req, res) => {
-// 	// we need to get the id
-// 	const exampleId = req.params.id
-// 	Example.findById(exampleId)
-// 		.then(example => {
-// 			res.render('examples/edit', { example })
-// 		})
-// 		.catch((error) => {
-// 			res.redirect(`/error?error=${error}`)
-// 		})
-// })
+// edit route -> GET that takes us to the edit form view
+router.get('/:id/edit', (req, res) => {
+	// we need to get the id
+	const cocktailId = req.params.id
+	Cocktail.findById(cocktailId)
+		.then(cocktail => {
+			res.render('cocktails/edit', { cocktail })
+		})
+		.catch((error) => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
 
-// // update route
-// router.put('/:id', (req, res) => {
-// 	const exampleId = req.params.id
-// 	req.body.ready = req.body.ready === 'on' ? true : false
+// update route
+router.put('/:id', (req, res) => {
+	const cocktailId = req.params.id
+	console.log('this is the request body in update', req.body)
+	Cocktail.findById(cocktailId)
+		.then(cocktail => {
+			if (cocktail.owner == req.session.userId) {
+                return cocktail.updateOne(req.body)
+            } else {
+                res.sendStatus(401)
+            }
+		})
+		then(() => {
+			res.redirect(`/cocktails/${cocktail.id}`)
+		})
+		.catch((error) => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
 
-// 	Example.findByIdAndUpdate(exampleId, req.body, { new: true })
-// 		.then(example => {
-// 			res.redirect(`/examples/${example.id}`)
-// 		})
-// 		.catch((error) => {
-// 			res.redirect(`/error?error=${error}`)
-// 		})
-// })
+// show route
+router.get('/:id', (req, res) => {
+	const cocktailId = req.params.id
+	Cocktail.findById(cocktailId)
+		.then(cocktail => {
+            const {username, loggedIn, userId} = req.session
+			res.render('cocktails/show', { cocktail, username, loggedIn, userId })
+		})
+		.catch((error) => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
 
-// // show route
-// router.get('/:id', (req, res) => {
-// 	const exampleId = req.params.id
-// 	Example.findById(exampleId)
-// 		.then(example => {
-//             const {username, loggedIn, userId} = req.session
-// 			res.render('examples/show', { example, username, loggedIn, userId })
-// 		})
-// 		.catch((error) => {
-// 			res.redirect(`/error?error=${error}`)
-// 		})
-// })
-
-// // delete route
-// router.delete('/:id', (req, res) => {
-// 	const exampleId = req.params.id
-// 	Example.findByIdAndRemove(exampleId)
-// 		.then(example => {
-// 			res.redirect('/examples')
-// 		})
-// 		.catch(error => {
-// 			res.redirect(`/error?error=${error}`)
-// 		})
-// })
+// delete route
+router.delete('/:id', (req, res) => {
+	const cocktailId = req.params.id
+	Cocktail.findByIdAndRemove(cocktailId)
+		.then(cocktail => {
+			res.redirect('/cocktails')
+		})
+		.catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
 
 // Export the Router
 module.exports = router

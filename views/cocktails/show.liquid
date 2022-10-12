@@ -3,20 +3,21 @@
 <div class="container-md">
     <article>
         <h2>
-            {{ example.title }} -
-            {% if example.ready %}
-            Ready
-            {% else %}
-            Not Ready
-            {%endif%}
+            {{ cocktail.name }}
         </h2>
-        <h3>Amount: {{ example.amount }}</h3>
-        <h6>Body: {{ example.body }}</h6>
-        {% if example.owner == userId %}
-        <div class="btn-group">
+        <h3>Spirit: {{ cocktail.spirit }}</h3>
+        <h6>Ingredients:</h6>
+            <ul>
+                {% for ingredient in cocktail.ingredients %}
+                <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+        <h6>Recipe: {{ cocktail. recipe }}</h6>
 
-            <a href="/examples/{{ example.id }}/edit" class="btn btn-primary">Edit</a>
-            <form action="/examples/{{ example.id }}?_method=DELETE" method="POST">
+        {% if cocktail.owner == userId %}
+        <div class="btn-group">
+            <a href="/cocktails/{{ cocktail.id }}/edit" class="btn btn-primary">Edit</a>
+            <form action="/cocktails/{{ cocktails.id }}?_method=DELETE" method="POST">
                 <input type="submit" value="Delete" class="btn btn-danger">
             </form>
         </div>
