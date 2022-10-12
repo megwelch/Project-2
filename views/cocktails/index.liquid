@@ -1,7 +1,7 @@
 {% layout 'layout.liquid'%}
 {% block content %}
 <div>
-    <h2 class="display-6">All Examples</h2>
+    <h2 class="display-6">Cocktails</h2>
     <div class="row">
         {% for cocktail in cocktails %}
         <div class="card" style="width: 18rem;">
@@ -12,7 +12,12 @@
                 Spirit: {{ cocktail.spirit }}
                 </p>
                 <p class="card-text">
-                    Ingredients: {{ cocktail.ingredients }}
+                    Ingredients:
+                    <ul>
+                        {% for ingredient in cocktail.ingredients %}
+                        <li>{{ ingredient }}</li>
+                        {% endfor %}
+                    </ul>
                 </p>
                 <p class="card-text">
                     Recipe: {{ cocktail.recipe }}

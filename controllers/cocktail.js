@@ -15,7 +15,9 @@ const router = express.Router()
 ////////////////////////////////////////////
 // index ALL
 router.get('/', (req, res) => {
-	Cocktail.find({})
+	// const spirit = req.body
+	// console.log(spirit)
+	Cocktail.find({'spirit': 'Vodka'})
 		.then(cocktails => {
 			const username = req.session.username
 			const loggedIn = req.session.loggedIn
@@ -28,6 +30,21 @@ router.get('/', (req, res) => {
 			res.redirect(`/error?error=${error}`)
 		})
 })
+
+// router.get('/', (req, res) => {
+// 	Cocktail.find({})
+// 		.then(cocktails => {
+// 			const username = req.session.username
+// 			const loggedIn = req.session.loggedIn
+// 			const userId = req.session.userId
+
+// 			res.render('cocktails/index', { cocktails, loggedIn, userId })
+// 		})
+// 		.catch(error => {
+// 			// console.log(error)
+// 			res.redirect(`/error?error=${error}`)
+// 		})
+// })
 
 // new route -> GET route that renders our page with the form
 router.get('/new', (req, res) => {
@@ -71,57 +88,57 @@ router.post('/', (req, res) => {
 		})
 })
 
-// edit route -> GET that takes us to the edit form view
-router.get('/:id/edit', (req, res) => {
-	// we need to get the id
-	const exampleId = req.params.id
-	Example.findById(exampleId)
-		.then(example => {
-			res.render('examples/edit', { example })
-		})
-		.catch((error) => {
-			res.redirect(`/error?error=${error}`)
-		})
-})
+// // edit route -> GET that takes us to the edit form view
+// router.get('/:id/edit', (req, res) => {
+// 	// we need to get the id
+// 	const exampleId = req.params.id
+// 	Example.findById(exampleId)
+// 		.then(example => {
+// 			res.render('examples/edit', { example })
+// 		})
+// 		.catch((error) => {
+// 			res.redirect(`/error?error=${error}`)
+// 		})
+// })
 
-// update route
-router.put('/:id', (req, res) => {
-	const exampleId = req.params.id
-	req.body.ready = req.body.ready === 'on' ? true : false
+// // update route
+// router.put('/:id', (req, res) => {
+// 	const exampleId = req.params.id
+// 	req.body.ready = req.body.ready === 'on' ? true : false
 
-	Example.findByIdAndUpdate(exampleId, req.body, { new: true })
-		.then(example => {
-			res.redirect(`/examples/${example.id}`)
-		})
-		.catch((error) => {
-			res.redirect(`/error?error=${error}`)
-		})
-})
+// 	Example.findByIdAndUpdate(exampleId, req.body, { new: true })
+// 		.then(example => {
+// 			res.redirect(`/examples/${example.id}`)
+// 		})
+// 		.catch((error) => {
+// 			res.redirect(`/error?error=${error}`)
+// 		})
+// })
 
-// show route
-router.get('/:id', (req, res) => {
-	const exampleId = req.params.id
-	Example.findById(exampleId)
-		.then(example => {
-            const {username, loggedIn, userId} = req.session
-			res.render('examples/show', { example, username, loggedIn, userId })
-		})
-		.catch((error) => {
-			res.redirect(`/error?error=${error}`)
-		})
-})
+// // show route
+// router.get('/:id', (req, res) => {
+// 	const exampleId = req.params.id
+// 	Example.findById(exampleId)
+// 		.then(example => {
+//             const {username, loggedIn, userId} = req.session
+// 			res.render('examples/show', { example, username, loggedIn, userId })
+// 		})
+// 		.catch((error) => {
+// 			res.redirect(`/error?error=${error}`)
+// 		})
+// })
 
-// delete route
-router.delete('/:id', (req, res) => {
-	const exampleId = req.params.id
-	Example.findByIdAndRemove(exampleId)
-		.then(example => {
-			res.redirect('/examples')
-		})
-		.catch(error => {
-			res.redirect(`/error?error=${error}`)
-		})
-})
+// // delete route
+// router.delete('/:id', (req, res) => {
+// 	const exampleId = req.params.id
+// 	Example.findByIdAndRemove(exampleId)
+// 		.then(example => {
+// 			res.redirect('/examples')
+// 		})
+// 		.catch(error => {
+// 			res.redirect(`/error?error=${error}`)
+// 		})
+// })
 
 // Export the Router
 module.exports = router
