@@ -1,0 +1,128 @@
+body{
+    font-family: Roboto Slab;
+    /* background-color: rgba(93, 173, 230, 0.2); */
+}
+
+/* nav-bar */
+.navbar-brand {
+    font-family: monoton;
+    color: white;
+    font-size: 60px;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #247291;
+    height: 75px;
+}
+
+/* Create New Cocktail */
+#new {
+    border: #247291 solid 5px;
+    background-color: #40a8c4;
+    margin-top: 65px;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-radius: 10px;
+    width: 600px;
+}
+
+.new-title {
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.new-input {
+    margin-bottom: 20px;
+}
+
+.recipe-input {
+    height: 75px;
+}
+
+.new-btn {
+    border: #247291 solid 5px;
+    font-size: 20px;
+    width: 300px;
+    margin: 30px;
+    color: white;
+    background-color: #ff895d;
+}
+
+.form-label {
+    font-size: 20px;
+}
+
+/* Spirits */
+.spirits-title {
+    margin-top: 30px;
+    font-size: 75px;
+}
+
+.spirit-container {
+    margin-top: 30px
+}
+
+.spirit-img {
+    height: 200px;
+}
+
+#whiskey {
+    background-image: url('https://i.imgur.com/XxnqmkF.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#tequila {
+    background-image: url('https://i.imgur.com/kBsnTOU.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#vodka {
+    background-image: url('https://i.imgur.com/xpLmVp6.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#rum {
+    background-image: url('https://i.imgur.com/zC4M8fZ.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#gin {
+    background-image: url('https://i.imgur.com/qIuCFCM.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.spirit-row-1 {
+    width: 700px;
+}
+
+.spirit-row-2 {
+    width: 450px;
+    margin-top: 30px;
+    margin-left: 120px;
+}
+
+.spirit-link {
+    text-decoration: none;
+    font-size: 30px;
+    color: #247291;
+}
+
+/* Index */
+.cocktail-img {
+    height: 200px;
+}

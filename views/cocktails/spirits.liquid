@@ -1,13 +1,32 @@
 {% layout 'layout.liquid'%}
 {% block content %}
-<div>
-    <h2 class="display-6">Spirits</h2>
-    <div class="row">
-        <a href="/cocktails/byspirit?spirit=Whiskey">Whiskey</a>
-        <a href="/cocktails/byspirit?spirit=Vodka">Vodka</a>
-        <a href="/cocktails/byspirit?spirit=Tequila">Tequila</a>
-        <a href="/cocktails/byspirit?spirit=Rum">Rum</a>
-        <a href="/cocktails/byspirit?spirit=Gin">Gin</a>
+<div class="text-center">
+    <h2 class="display-6 spirits-title">Spirits</h2>
+    <div class="d-inline-flex flex-column justify-content spirit-container p-20">
+        <div class="row spirit-row-1 justify-content-md-center">
+            <div class="col spirit">
+                <div class="spirit-img" id="whiskey"></div>
+                <a class="spirit-link" href="/cocktails/byspirit?spirit=whiskey">Whiskey</a>
+            </div>
+            <div class="col spirit">
+                <div class="spirit-img" id="vodka"></div>
+                <a class="spirit-link" href="/cocktails/byspirit?spirit=vodka">Vodka</a>
+            </div>
+            <div class="col spirit">
+                <div class="spirit-img" id="tequila"></div>
+                <a class="spirit-link" href="/cocktails/byspirit?spirit=tequila">Tequila</a>
+            </div>
+        </div>
+        <div class="row spirit-row-2 justify-content-center">
+            <div class="col spirit">
+                <div class="spirit-img" id="rum"></div>
+                <a class="spirit-link" href="/cocktails/byspirit?spirit=rum">Rum</a>
+            </div>
+            <div class="col spirit">
+                <div class="spirit-img" id="gin"></div>
+                <a class="spirit-link" href="/cocktails/byspirit?spirit=gin">Gin</a>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

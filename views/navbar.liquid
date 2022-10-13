@@ -1,14 +1,14 @@
 {% block content %}
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md">
     <div class="container-fluid">
         <a href="/" class="navbar-brand">MIXIES</a>
-        {% if loggedIn %}
-        <a href="/examples/mine" class="nav-link text-light">Hello {{ username }} </a>
-        {% endif %}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            {% if loggedIn %}
+                <a href="/examples/mine" class="nav-link text-light justify-content-end">Hello, {{ username }} </a>
+            {% endif %}
             {% if loggedIn %}
                 <a href="/cocktails/new" class="nav-link text-light">New</a>
                 <a href="/cocktails/mine" class="nav-link text-light">My Cocktails</a>

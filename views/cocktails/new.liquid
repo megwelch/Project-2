@@ -1,30 +1,30 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<div class="container-sm">
-    <form action="/cocktails" method="POST">
+<div id="new" class="container-sm">
+    <form class="form-group" action="/cocktails" method="POST">
         <fieldset>
-            <legend>Create New Cocktail</legend>
+            <legend class="new-title">Create New Cocktail</legend>
             <label class="form-label">Cocktail: </label>
             <input 
                 type="text" 
                 name="name" 
                 placeholder="cocktail"
-                class="form-control"
+                class="form-control new-input"
             >
-            <label class="form-label">Spirit</label>
+            <label class="form-label">Spirit:</label>
             <input 
                 type="text" 
                 name="spirit" 
                 placeholder="spirit" 
-                class="form-control"
+                class="form-control new-input"
             >
             <label class="form-label">Ingredients:</label>
-            <small>Add each ingredient separated by a comma</small>
             <input 
                 id="ingredients"
                 type="text" 
                 name="ingredients" 
-                class="form-control"
+                class="form-control new-input"
+                placeholder="Add each ingredient separated by a comma"
             >
             
             {%- comment -%} {% assign ingredientsArray = ingredientsArray | push:  %} {%- endcomment -%}
@@ -35,10 +35,12 @@
             <input 
                 type="text" 
                 name="recipe" 
-                class="form-control"
+                class="form-control new-input recipe-input"
             >
         </fieldset>
-        <input type="submit" value="Create New Cocktail" class="btn btn-success">
+        <div class="text-center">
+        <input type="submit" value="Create New Cocktail" class="btn new-btn justify-content-center">
+        </div>
     </form>
 </div>
 {% endblock %}

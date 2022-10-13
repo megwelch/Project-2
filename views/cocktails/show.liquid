@@ -6,6 +6,7 @@
             {{ cocktail.name }}
         </h2>
         <h3>Spirit: {{ cocktail.spirit }}</h3>
+        <img src="{{ cocktail.image }}" alt="image of a {{cocktail.name}}">
         <h6>Ingredients:</h6>
             <ul>
                 {% for ingredient in cocktail.ingredients %}
@@ -17,11 +18,49 @@
         {% if cocktail.owner == userId %}
         <div class="btn-group">
             <a href="/cocktails/{{ cocktail.id }}/edit" class="btn btn-primary">Edit</a>
-            <form action="/cocktails/{{ cocktails.id }}?_method=DELETE" method="POST">
+            <form action="/cocktails/{{ cocktail.id }}?_method=DELETE" method="POST">
                 <input type="submit" value="Delete" class="btn btn-danger">
             </form>
         </div>
         {% endif %}
     </article>
+</div>
+{%- comment -%} review {%- endcomment -%}
+    <hr>
+    <h4>Reviews</h4>
+    <hr>
+    {% if loggedIn %}
+        <div class="col-md-6">
+            <form action="/reviews/{{cocktail.id}}" method="POST">
+                <fieldset>
+                    <legend>Add Rating</legend>
+                    <label class="form-label">Rating (1-5):</label>
+                    <input class="form-control mb-1" type="text" placeholder="enter your rating" name="rating" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Add Review</legend>
+                    <label class="form-label">comment:</label>
+                    <input class="form-control mb-1" type="text" placeholder="enter your comment..." name="comment" required>
+                </fieldset>
+                <input class="btn btn-success" type="submit" value="add review">
+            </form>
+        </div>
+    {% else %}
+        <div class="col-md-6">
+            <small>If you'd like to leave a review, please log in...</small>
+        </div>
+    {% endif %}
+    <hr>
+    {% if cocktail.reviews.length > 0%}
+        <div class="container-sm justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                {% for review in cocktail.reviews %}
+                    {% render '../review.liquid', review: review, userId: userId, cocktail: cocktail %}
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <small>no reviews yet...</small>
+    {% endif %}
 </div>
 {% endblock %}
