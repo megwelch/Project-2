@@ -1,7 +1,49 @@
 {% layout 'layout.liquid'%}
 {% block content %}
 <div class="text-center">
-    <h2 class="display-6 spirits-title">Spirits</h2>
+    <h2 class="display-6 mt-4 spirits-title">Spirits</h2>
+    <main class="spirit-main">
+        <div class="spirits-container">
+            <container class="spirit-row-1">
+                <section>
+                    <div class="spirit-img" id="whiskey"></div>
+                    <div class="spirit-link-container">
+                        <a class="spirit-link" href="/cocktails/byspirit?spirit=whiskey">Whiskey</a>
+                    </div>
+                </section>
+                <section>
+                    <div class="spirit-img" id="vodka"></div>
+                    <div class="spirit-link-container">
+                        <a class="spirit-link" href="/cocktails/byspirit?spirit=vodka">Vodka</a>
+                    </div>
+                </section>
+            </container>
+            <contianer class="spirit-row-2">
+                <section>
+                    <div class="spirit-img" id="rum"></div>
+                    <div class="spirit-link-container">
+                        <a class="spirit-link" href="/cocktails/byspirit?spirit=rum">Rum</a>
+                    </div>
+                </section>
+                <section>
+                    <div class="spirit-img" id="tequila"></div>
+                    <div class="spirit-link-container">
+                        <a class="spirit-link" href="/cocktails/byspirit?spirit=tequila">Tequila</a>
+                    </div>
+                </section>
+                <section>
+                    <div class="spirit-img" id="gin"></div>
+                    <div class="spirit-link-container">
+                        <a class="spirit-link" href="/cocktails/byspirit?spirit=gin">Gin</a>
+                    </div>
+                </section>
+            </contianer>
+        </div>
+    </main>
+</div>
+
+{%- comment -%} <div class="text-center">
+    <h2 class="display-6 mt-4 spirits-title">Spirits</h2>
     <div class="d-inline-flex flex-column justify-content spirit-container p-20">
         <div class="row spirit-row-1 justify-content-md-center">
             <div class="col spirit">
@@ -28,5 +70,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> {%- endcomment -%}
 {% endblock %}

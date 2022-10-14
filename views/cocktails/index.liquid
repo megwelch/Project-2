@@ -1,18 +1,23 @@
 {% layout 'layout.liquid'%}
 {% block content %}
-<div>
-    <h2 class="display-6">{{cocktail.spirit}} Cocktails</h2>
-    <div class="row">
+<div class="text-center">
+    <h2 class="display-6 mt-4 cocktail-title">{{cocktail.spirit}}Cocktails</h2>
+    <div class="row justify-content-center">
         {% for cocktail in cocktails %}
-        <div class="card" style="width: 18rem;">
-            <h5 class="card-header">{{ cocktail.name }}</h5>
+        <div class="card index-card text-center m-4" style="width: 18rem;">
+            <h5 class="card-text index-title">{{ cocktail.name }}</h5>
             <div class="card-body">
-                </h5>
-                <p class="card-text">
+                {%- comment -%} <p class="card-text">
                 Spirit: {{ cocktail.spirit }}
-                </p>
-                <img class="cocktail-img" src="{{ cocktail.image }}" alt="image of a {{cocktail.name}}">
-                <p class="card-text">
+                </p> {%- endcomment -%}
+                {% if cocktail.image.length > 0 %}
+                    <div class="cocktail-img-container">
+                        <img class="cocktail-img m-3" src="{{ cocktail.image }}" alt="image of a {{cocktail.name}}">
+                    </div>
+                {% else %}
+                    <img class="cocktail-img" src="{{ cocktail.image }}" style="display:none">
+                {% endif %}
+                {%- comment -%} <p class="card-text">
                     Ingredients:
                     <ul>
                         {% for ingredient in cocktail.ingredients %}
@@ -22,8 +27,9 @@
                 </p>
                 <p class="card-text">
                     Recipe: {{ cocktail.recipe }}
-                </p>
-                <a href="/cocktails/{{ cocktail.id }}" class="btn btn-info">
+                </p> {%- endcomment -%}
+                <br>
+                <a href="/cocktails/{{ cocktail.id }}" class="btn view-btn">
                     View {{ cocktail.name }}
                 </a>
             </div>

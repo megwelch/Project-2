@@ -1,66 +1,49 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<div class="container-md">
-    <article>
-        <h2>
-            {{ cocktail.name }}
-        </h2>
-        <h3>Spirit: {{ cocktail.spirit }}</h3>
-        <img src="{{ cocktail.image }}" alt="image of a {{cocktail.name}}">
-        <h6>Ingredients:</h6>
-            <ul>
-                {% for ingredient in cocktail.ingredients %}
-                <li>{{ ingredient }}</li>
-                {% endfor %}
-            </ul>
-        <h6>Recipe: {{ cocktail. recipe }}</h6>
-
-        {% if cocktail.owner == userId %}
-        <div class="btn-group">
-            <a href="/cocktails/{{ cocktail.id }}/edit" class="btn btn-primary">Edit</a>
-            <form action="/cocktails/{{ cocktail.id }}?_method=DELETE" method="POST">
-                <input type="submit" value="Delete" class="btn btn-danger">
-            </form>
-        </div>
-        {% endif %}
-    </article>
-</div>
-{%- comment -%} review {%- endcomment -%}
-    <hr>
-    <h4>Reviews</h4>
-    <hr>
-    {% if loggedIn %}
-        <div class="col-md-6">
-            <form action="/reviews/{{cocktail.id}}" method="POST">
-                <fieldset>
-                    <legend>Add Rating</legend>
-                    <label class="form-label">Rating (1-5):</label>
-                    <input class="form-control mb-1" type="text" placeholder="enter your rating" name="rating" required>
-                </fieldset>
-                <fieldset>
-                    <legend>Add Review</legend>
-                    <label class="form-label">comment:</label>
-                    <input class="form-control mb-1" type="text" placeholder="enter your comment..." name="comment" required>
-                </fieldset>
-                <input class="btn btn-success" type="submit" value="add review">
-            </form>
-        </div>
-    {% else %}
-        <div class="col-md-6">
-            <small>If you'd like to leave a review, please log in...</small>
-        </div>
-    {% endif %}
-    <hr>
-    {% if cocktail.reviews.length > 0%}
-        <div class="container-sm justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                {% for review in cocktail.reviews %}
-                    {% render '../review.liquid', review: review, userId: userId, cocktail: cocktail %}
-                {% endfor %}
+<container class="show-page">
+    <div class="d-flex justify-content-center">
+        <container class="show-card mt-5 col d-flex justify-content-center">
+            <div class="show-img-container">
+                <img class="show-img" src="{{ cocktail.image}}" alt="picture of {{ cocktail.name}}">
             </div>
+            <div class="info-container">
+                <h1 class="show-title">{{ cocktail.name }}</h1>
+                <h2 class="ingredients">Ingredients:</h2>
+                    <ul>
+                        {% for ingredient in cocktail.ingredients %}
+                            <li>{{ ingredient }}</li>
+                        {% endfor %}
+                    </ul>
+                <h2>Recipe:</h2>
+                <p>{{ cocktail.recipe }}</p>
+                <contianer class="show-btn-container">
+                        {% if cocktail.owner == userId %}
+                            <div class="btn-toolbar">
+                                <a href="/cocktails/{{ cocktail.id }}/edit" class="btn show-btn">Edit</a>
+                                <form action="/cocktails/{{ cocktail.id }}?_method=DELETE" method="POST">
+                                    <input type="submit" value="Delete" class="btn show-btn">
+                                </form>
+                            </div>
+                        {% endif %}
+                </contianer>
+            </div>
+        </container>
+    </div>
+    <div class="d-flex flex-column">
+        <a href="/cocktails/{{ cocktail.id }}/review" class="btn review-btn show-btn d-flex">Leave a Review</a>
+        <div>
+            {% if cocktail.reviews.length > 0%}
+                <div class="container-sm justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        {% for review in cocktail.reviews %}
+                            {% render '../review.liquid', review: review, userId: userId, cocktail: cocktail %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <small>No reviews yet...</small>
+            {% endif %}
         </div>
-    {% else %}
-        <small>no reviews yet...</small>
-    {% endif %}
-</div>
+    </div> 
+</container>
 {% endblock %}

@@ -14,6 +14,7 @@ const router = express.Router()
 ////////////////////////////////////////////
 // POST
 // only loggedIn users can post comments
+
 router.post("/:cocktailId", (req, res) => {
     const cocktailId = req.params.cocktailId
 

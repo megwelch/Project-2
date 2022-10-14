@@ -15,10 +15,6 @@ const router = express.Router()
 ////////////////////////////////////////////
 // index ALL
 
-router.get('/', (req, res) => {
-	res.render('/spirits')
-})
-
 router.get('/byspirit', (req, res) => {
 	const spirit = req.query.spirit
 	Cocktail.find({'spirit': spirit})
@@ -88,6 +84,19 @@ router.get('/mine', (req, res) => {
 			res.render('cocktails/index', { cocktails, username, loggedIn, userId })
 		})
 		.catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+
+// review route
+router.get('/:id/review', (req, res) => {
+	// we need to get the id
+	const cocktailId = req.params.id
+	Cocktail.findById(cocktailId)
+		.then(cocktail => {
+			res.render('cocktails/review', { cocktail })
+		})
+		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
 		})
 })

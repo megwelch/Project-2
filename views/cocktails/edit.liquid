@@ -1,41 +1,54 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<div class="container-sm">
-    <form action="/cocktails/{{cocktail.id}}?_method=PUT" method="POST">
+<div class="container-sm new-and-edit-container">
+    <form class="form-group" action="/cocktails/{{cocktail.id}}?_method=PUT" method="POST">
         <fieldset>
-            <legend>Create New Example</legend>
+            <legend class="new-edit-title">Edit Cocktail</legend>
             <label class="form-label">Cocktail: </label>
             <input 
                 type="text" 
                 name="name" 
-                placeholder="{{ cocktail.name }}"
-                value="{{ cocktail.name }}"
-                class="form-control"
+                value="{{ cocktail.name}}"
+                class="form-control new-input"
             >
             <label class="form-label">Spirit:</label>
             <input 
                 type="text" 
                 name="spirit" 
-                placeholder="{{ cocktail.spirit }}" 
-                value="{{ cocktail.spirit }}" 
-                class="form-control"
+                value="{{ cocktail.spirit}}" 
+                class="form-control new-input"
             >
-            <label class="form-label">Ingrediets:</label>
+            <label class="form-label">Image:</label>
             <input 
                 type="text" 
-                name="ingredients"
-                value="{{ cocktail.ingredients }}"
-                class="form-control"
+                name="image" 
+                value="{{ cocktail.image }}" 
+                class="form-control new-input"
             >
+            <label class="form-label">Ingredients:</label>
+            <input 
+                id="ingredients"
+                type="text" 
+                name="ingredients" 
+                class="form-control new-input"
+                value="{{ cocktail.ingridients}}"
+            >
+            
+            {%- comment -%} {% assign ingredientsArray = ingredientsArray | push:  %} {%- endcomment -%}
+            {%- comment -%} <input id="ingredients-btn" type="" value="Add Ingredient" class="btn btn-success"> {%- endcomment -%}
+            {%- comment -%} <button></button> {%- endcomment -%}
+            {%- comment -%} <ul></ul> {%- endcomment -%}
             <label class="form-label">Recipe:</label>
             <input 
                 type="text" 
                 name="recipe" 
+                class="form-control new-input recipe-input"
                 value="{{ cocktail.recipe }}"
-                class="form-control"
             >
         </fieldset>
-        <input type="submit" value="Edit Example" class="btn btn-success">
+        <div class="text-center">
+            <input type="submit" value="Edit Example" class="btn new-edit-btn justify-content-center">
+        </div>
     </form>
 </div>
 {% endblock %}

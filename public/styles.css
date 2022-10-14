@@ -3,6 +3,25 @@ body{
     /* background-color: rgba(93, 173, 230, 0.2); */
 }
 
+
+
+/* main index */
+.mixie-container {
+    width: 60%;
+}
+
+/* .mixie-content {
+    display: flex;
+    justify-content: center;
+} */
+
+.mixie-description {
+    width: 50%px;
+    display: flex;
+    align-items: center;
+}
+
+
 /* nav-bar */
 .navbar-brand {
     font-family: monoton;
@@ -13,23 +32,35 @@ body{
     margin: 0;
 }
 
+.navbar-brand:hover {
+    color: #1bf5af;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #1bf5af;
+}
+
 .navbar {
-    background-color: #247291;
+    background-color: #4f7097;
     height: 75px;
 }
 
-/* Create New Cocktail */
-#new {
-    border: #247291 solid 5px;
-    background-color: #40a8c4;
-    margin-top: 65px;
+/* Create New/Edit Cocktail */
+.new-and-edit-container {
+    border: #4f7097 solid 5px;
+    background-color: #93a7d1;
+    margin-top: 20px;
     padding-right: 40px;
     padding-left: 40px;
     border-radius: 10px;
     width: 600px;
 }
 
-.new-title {
+.new-edit-title {
     color: white;
     margin-top: 20px;
     text-align: center;
@@ -40,17 +71,17 @@ body{
     margin-bottom: 20px;
 }
 
-.recipe-input {
-    height: 75px;
-}
-
-.new-btn {
-    border: #247291 solid 5px;
+.new-edit-btn {
     font-size: 20px;
     width: 300px;
     margin: 30px;
     color: white;
-    background-color: #ff895d;
+    background-color: #4f7097;
+}
+
+.new-edit-btn:hover {
+    background-color: #1bf5af;
+    color: #4f7097;
 }
 
 .form-label {
@@ -59,12 +90,27 @@ body{
 
 /* Spirits */
 .spirits-title {
-    margin-top: 30px;
-    font-size: 75px;
+    color: white;
+    width: 100%;
+    padding-bottom: 7px;
+    font-size: 60px;
+    font-weight: 600;
+    background-color:#93a7d1;
+    border-top: solid 4px #4f7097;
+    border-bottom: solid 4px #4f7097;
 }
 
-.spirit-container {
-    margin-top: 30px
+.spirit-main {
+    margin-top:30px;
+    display: flex;
+    justify-content: center;
+}
+
+.spirit-row-1, .spirit-row-2 {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
 }
 
 .spirit-img {
@@ -116,13 +162,139 @@ body{
     margin-left: 120px;
 }
 
+.spirit-link-container {
+    display:flex;
+    align-items: center;
+    padding:10px;
+    height:40px;
+    margin-top: 10px;
+}
+
+.spirit-link-container:hover {
+    color: #247291;
+    background-color:#1bf5af;
+}
+
+.spirit-link:hover{
+    color: #247291;
+}
+
 .spirit-link {
+    padding: 30px;
     text-decoration: none;
     font-size: 30px;
     color: #247291;
 }
 
 /* Index */
+.index-card {
+    padding:0;
+}
+
+.cocktail-title {
+    color: white;
+    width: 100%;
+    font-size: 60px;
+    font-weight: 600;
+    background-color:#93a7d1;
+    border-top: solid 4px #4f7097;
+    border-bottom: solid 4px #4f7097;
+}
+
+.card {
+    border: solid 5px #247291;
+    border-radius: 5px;
+}
+
+.index-title {
+    padding-bottom: 7px;
+    background-color:#247291;
+    color: white;
+    font-size: 30px;
+    white-space: nowrap;
+}
+
+.cocktail-img-container{
+    background-color: white;
+}
+
 .cocktail-img {
     height: 200px;
+}
+
+.view-btn {
+    color: white;
+    font-size: 18px;
+    background-color:#93a7d1; 
+    border: #4f7097 solid 3px;
+    margin: 10px, 0px, 10px, 0px;
+    white-space: nowrap;
+} 
+
+.view-btn:hover {
+    background-color:#1bf5af; 
+    color: #4f7097;
+}
+
+/* show */
+.show-card {
+    min-width: 700px; 
+    max-width: 900px;
+    max-height: 500px;
+    border: #4f7097 solid 4px;
+    border-radius: 10px;
+}
+
+.show-title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 400;
+    background-color:#4f7097;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.show-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 30px;
+}
+
+.info-container {
+    width: 60%;
+    margin: 30px 30px 30px 10px;
+}
+
+.show-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.show-btn {
+    border: #4f7097 solid 3px;
+    margin: 20px 15px 0px 15px;
+    width: 140px;
+    background-color: #93a7d1;
+    color: white;
+}
+
+.show-btn:hover {
+    background-color: #1bf5af;
+    color: #4f7097;
+}
+
+/* review */
+.review-btn {
+    width: 200px;
+    margin-top: 30px;
 }
