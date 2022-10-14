@@ -7,7 +7,7 @@ body{
 
 /* main index */
 .mixie-container {
-    width: 60%;
+    margin: auto;
 }
 
 /* .mixie-content {
@@ -15,8 +15,14 @@ body{
     justify-content: center;
 } */
 
+.mixie-image-container {
+    background-image: url('https://i.imgur.com/AZnfs3M.png');
+    background-position: center;
+    background-size: contain;
+}
+
 .mixie-description {
-    width: 50%px;
+    width: 45%;
     display: flex;
     align-items: center;
 }

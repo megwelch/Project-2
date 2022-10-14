@@ -31,19 +31,19 @@
     </div>
     <div class="d-flex flex-column">
         <a href="/cocktails/{{ cocktail.id }}/review" class="btn review-btn show-btn d-flex">Leave a Review</a>
-        <div>
-            {% if cocktail.reviews.length > 0%}
-                <div class="container-sm justify-content-center">
-                    <div class="col-md-8 col-lg-6">
-                        {% for review in cocktail.reviews %}
-                            {% render '../review.liquid', review: review, userId: userId, cocktail: cocktail %}
-                        {% endfor %}
-                    </div>
+    </div>
+    <div>
+        {% if cocktail.reviews.length > 0%}
+            <div class="container-sm justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    {% for review in cocktail.reviews %}
+                        {% render '../review.liquid', review: review, userId: userId, cocktail: cocktail %}
+                    {% endfor %}
                 </div>
-            {% else %}
-                <small>No reviews yet...</small>
-            {% endif %}
-        </div>
+            </div>
+        {% else %}
+            <small>No reviews yet...</small>
+        {% endif %}
     </div> 
 </container>
 {% endblock %}

@@ -1,12 +1,12 @@
 {% layout "layout.liquid" %}
 {% block content %}
-    <container class="mixie-container d-flex justify-content-center">
-        <div class="mixie-content d-flex justify-content-center">
+    <container>
+        <div class="mixie-container d-flex justify-content-center" style="width:75%">
                 <section class="mixie-description">
                     Mixies is an app built for anyone who wants to enjoy a good cocktail! Enjoy our list of cocktail recipes as well as recipes made by our users. Don’t forget to create an account to add and keep track of your own creative cocktail recipes! Happy mixin’!
                 </section>
-                <section>
-                    <img class="main-image fluid rounded mt-5" style="max-width: 75%; height: auto" src="https://i.imgur.com/AZnfs3M.png" alt="Benjamin Franklin">
+                <section class="mixie-image-container">
+                    {%- comment -%} <img class="main-image fluid rounded mt-5" style="max-width: 75%; height: auto" src="https://i.imgur.com/AZnfs3M.png" alt="Benjamin Franklin"> {%- endcomment -%}
                 </section>
         </div>
     </container>

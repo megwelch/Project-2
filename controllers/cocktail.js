@@ -90,11 +90,13 @@ router.get('/mine', (req, res) => {
 
 // review route
 router.get('/:id/review', (req, res) => {
-	// we need to get the id
+	const username = req.session.username
+    const loggedIn = req.session.loggedIn
+    const userId = req.session.userId
 	const cocktailId = req.params.id
 	Cocktail.findById(cocktailId)
 		.then(cocktail => {
-			res.render('cocktails/review', { cocktail })
+			res.render('cocktails/review', { cocktail, username, loggedIn, userId })
 		})
 		.catch((error) => {
 			res.redirect(`/error?error=${error}`)
