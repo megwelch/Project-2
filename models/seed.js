@@ -88,6 +88,13 @@ db.on('open', () => {
             ingredients: ['2 oz gin', '1 oz lemon juice', '1/2 oz simple syrup', 'club soda'],
             recipe: 'Add the gin, lemon juice and simple syrup to a Collins glass. Fill with ice, top with club soda and stir. Garnish with a lemon wheel.',
         },
+        {
+            name:'Classic Martini',
+            image: 'https://i.imgur.com/xpLmVp6.png',
+            spirit: 'vodka',
+            ingredients: ['3.5 oz vodka', '.5 oz vermouth', 'olives'],
+            recipe: 'Pour ice, vodka and vermouth into a glass shaker. Shake and pour into a martini glass. Garnish with olives.',
+        }
     ]
 
     // delete all existing cocktails

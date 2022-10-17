@@ -23,7 +23,7 @@ router.get('/byspirit', (req, res) => {
 			const loggedIn = req.session.loggedIn
 			const userId = req.session.userId
 
-			res.render('cocktails/index', { cocktails, loggedIn, userId })
+			res.render('cocktails/index', { cocktails, loggedIn, userId, username })
 		})
 		.catch(error => {
 			// console.log(error)
@@ -56,7 +56,10 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
 	req.body.owner = req.session.userId
 	const ingArr = req.body.ingredients.split(',')
+	const spirit = req.body.spirit.toLowerCase()
+	req.body.spirit = spirit
 	req.body.ingredients = ingArr
+	const name = req.body.name.
 	// let spirit = req.body.spirit
 	// req.body.spirit = spirit.charAt(0).toUpperCase() + spirit.slice(1)
 	// console.log('this is the request body in create', req.body)

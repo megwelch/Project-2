@@ -8,12 +8,21 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             {% if loggedIn %}
                 <a href="/cocktails/mine" class="nav-link justify-content-end">Hello, {{ username }}</a>
-            {% endif %}
-            {% if loggedIn %}
                 <a href="/cocktails/new" class="nav-link">New</a>
                 <a href="/cocktails/mine" class="nav-link">My Cocktails</a>
                 <a href="/auth/logout" class="nav-link">Log Out</a>
-                <a href="/spirits" class="nav-link">View All Cocktails</a>
+                {%- comment -%} <div class="dropdown">
+                    <h6 class="dropdown">View Cocktails</h6>
+                    <a href="/spirits" class="nav-link">View All Cocktails</a>
+                </div> {%- endcomment -%}
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    View Cocktails</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/spirits">View by Spirit</a></li>
+                            <li><a class="dropdown-item" href="/cocktails">View All Cocktails</a></li>
+                        </ul>
+                </div>
             {% else %}
                 <a href="/auth/signup" class="nav-link">Sign Up</a>
                 <a href="/auth/login" class="nav-link">Sign In</a>

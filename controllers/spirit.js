@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 			const loggedIn = req.session.loggedIn
 			const userId = req.session.userId
 
-			res.render('cocktails/spirits', { cocktails, loggedIn, userId })
+			res.render('cocktails/spirits', { cocktails, loggedIn, userId, username })
 		})
 		.catch(error => {
 			// console.log(error)
