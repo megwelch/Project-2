@@ -59,7 +59,6 @@ router.post('/', (req, res) => {
 	const spirit = req.body.spirit.toLowerCase()
 	req.body.spirit = spirit
 	req.body.ingredients = ingArr
-	const name = req.body.name.
 	// let spirit = req.body.spirit
 	// req.body.spirit = spirit.charAt(0).toUpperCase() + spirit.slice(1)
 	// console.log('this is the request body in create', req.body)
