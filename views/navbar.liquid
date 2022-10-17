@@ -19,14 +19,21 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     View Cocktails</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/spirits">View by Spirit</a></li>
+                            <li><a class="dropdown-item" href="/spirits">View By Spirit</a></li>
                             <li><a class="dropdown-item" href="/cocktails">View All Cocktails</a></li>
                         </ul>
                 </div>
             {% else %}
                 <a href="/auth/signup" class="nav-link">Sign Up</a>
                 <a href="/auth/login" class="nav-link">Sign In</a>
-                <a href="/spirits" class="nav-link">View Cocktails</a>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    View Cocktails</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/spirits">View By Spirit</a></li>
+                            <li><a class="dropdown-item" href="/cocktails">View All Cocktails</a></li>
+                        </ul>
+                </div>
             {% endif %}
         </div>
     </div>
