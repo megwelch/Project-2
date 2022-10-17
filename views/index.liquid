@@ -1,13 +1,16 @@
 {% layout "layout.liquid" %}
 {% block content %}
-    <container>
-        <div class="mixie-container d-flex justify-content-center" style="width:75%">
-                <section class="mixie-description">
-                    Mixies is an app built for anyone who wants to enjoy a good cocktail! Enjoy our list of cocktail recipes as well as recipes made by our users. Don’t forget to create an account to add and keep track of your own creative cocktail recipes! Happy mixin’!
+    <container class="mixie-container d-flex justify-content-center">
+        <div class="d-flex justify-content-center align-items-center" style="width:85%">
+                <section class="mixie-description-container d-flex-column justify-content-center align-items-center">
+                    <h1 class="welcome">Welcome to Mixies!</h1>
+                    <div class="mixie-para">Mixies is an app built for anyone who wants to enjoy a good cocktail! Feel free to browse our list of cocktail recipes as well as recipes made by our users. Don't forget to create an account to add and keep track of your own creative cocktail recipes! Happy mixin'!</div>
                 </section>
                 <section class="mixie-image-container">
-                    {%- comment -%} <img class="main-image fluid rounded mt-5" style="max-width: 75%; height: auto" src="https://i.imgur.com/AZnfs3M.png" alt="Benjamin Franklin"> {%- endcomment -%}
+                    <img src="https://i.imgur.com/w2l3I65.png" style="height: 450px;" class="rounded float-left mt-4 fluid" alt="Benjamin Franklin">
                 </section>
         </div>
     </container>
 {% endblock %}
+
+{%- comment -%} <img class="main-image fluid rounded mt-5" style="max-width: 75%; height: auto" src="https://i.imgur.com/AZnfs3M.png" alt="Benjamin Franklin"> {%- endcomment -%}

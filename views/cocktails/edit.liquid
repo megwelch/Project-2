@@ -1,9 +1,9 @@
 {% layout 'layout.liquid' %}
 {% block content %}
-<div class="container-sm new-and-edit-container">
+<div class="container-sm form-container">
     <form class="form-group" action="/cocktails/{{cocktail.id}}?_method=PUT" method="POST">
         <fieldset>
-            <legend class="new-edit-title">Edit Cocktail</legend>
+            <legend class="form-title">Edit Cocktail</legend>
             <label class="form-label">Cocktail: </label>
             <input 
                 type="text" 

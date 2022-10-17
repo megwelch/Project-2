@@ -73,7 +73,7 @@ router.post('/login', async (req, res) => {
 					res.redirect('/')
 				} else {
 					// send an error if the password doesnt match
-					res.redirect('/error?error=username%20or%20password%20incorrect')
+					res.redirect('/error?error=Username%20or%20password%20incorrect')
 				}
 			} else {
 				// send an error if the user doesnt exist

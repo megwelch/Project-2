@@ -7,24 +7,30 @@ body{
 
 /* main index */
 .mixie-container {
-    margin: auto;
+    margin-top: 100px;
 }
-
-/* .mixie-content {
-    display: flex;
-    justify-content: center;
-} */
 
 .mixie-image-container {
-    background-image: url('https://i.imgur.com/AZnfs3M.png');
-    background-position: center;
-    background-size: contain;
+    /* margin-left: 30px; */
 }
 
-.mixie-description {
+.mixie-description-container {
     width: 45%;
-    display: flex;
     align-items: center;
+}
+
+.welcome {
+    margin-top: 40px;
+    padding-bottom: 10px;
+    margin-left: 27px;
+}
+
+.mixie-para {
+    font-size: 20px;
+    margin: 20px 55px 20px 20px;
+    border-top: black solid 2px;
+    padding-top: 30px;
+    padding-left: 5px;
 }
 
 
@@ -56,7 +62,7 @@ body{
 }
 
 /* Create New/Edit Cocktail */
-.new-and-edit-container {
+.form-container {
     border: #4f7097 solid 5px;
     background-color: #93a7d1;
     margin-top: 20px;
@@ -66,7 +72,7 @@ body{
     width: 600px;
 }
 
-.new-edit-title {
+.form-title {
     color: white;
     margin-top: 20px;
     text-align: center;
@@ -208,13 +214,13 @@ body{
 }
 
 .card {
-    border: solid 5px #247291;
+    border: solid 5px #4f7097;
     border-radius: 5px;
 }
 
 .index-title {
     padding-bottom: 7px;
-    background-color:#247291;
+    background-color: #4f7097;
     color: white;
     font-size: 30px;
     white-space: nowrap;
@@ -249,6 +255,7 @@ body{
     max-height: 500px;
     border: #4f7097 solid 4px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .show-title {
@@ -300,7 +307,86 @@ body{
 }
 
 /* review */
+.yellow-star {
+    color: #FFBF00;
+}
+
+.gray-star {
+    color: #888888;
+}
+
+.review-container {
+    margin: auto;
+}
+
 .review-btn {
     width: 200px;
-    margin-top: 30px;
+    margin: 25px;
+}
+
+.no-reviews {
+    font-size: 20px;
+    margin: auto;
+    padding: 10px 30px 10px 30px;
+    font-size: 20px;
+    width: 300px;
+    color: white;
+    background-color: #4f7097;
+    border-radius: 10px;
+}
+
+.review-card-show {
+    margin: auto;
+}
+
+.review-card {
+    border-radius: 10px;
+    border: #4f7097 solid 4px;
+}
+
+.review-delete-btn {
+    font-size: 20px;
+    width: 200px;
+    color: white;
+    background-color: #4f7097;
+}
+
+.review-delete-btn:hover {
+    background-color: #1bf5af;
+    color: #4f7097;
+}
+
+.review-content {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.review-container {
+    margin-top: 60px;
+}
+
+.review-notice {
+    margin-bottom: 40px;
+}
+
+/* auth */
+.auth-label {
+    margin-top: 18px;
+}
+
+.auth-container {
+    margin-top: 60px;
+}
+
+.form-label {
+    color: white;
+}
+
+/* error */
+.error-container{
+    margin-top: 70px;
+}
+
+span {
+    font-family: monoton;
 }

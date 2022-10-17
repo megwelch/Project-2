@@ -21,6 +21,8 @@ router.post("/:cocktailId", (req, res) => {
     if (req.session.loggedIn) {
         // we want to adjust req.body so that the author is automatically assigned
         req.body.author = req.session.userId
+        const username = req.session.username
+        console.log(username)
     } else {
         res.sendStatus(401)
     }

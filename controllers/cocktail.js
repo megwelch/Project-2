@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
 			const loggedIn = req.session.loggedIn
 			const userId = req.session.userId
 
-			res.render('cocktails/index', { cocktails, loggedIn, userId })
+			res.render('cocktails/index', { cocktails, loggedIn, userId, username })
 		})
 		.catch(error => {
 			// console.log(error)
@@ -95,6 +95,7 @@ router.get('/:id/review', (req, res) => {
     const userId = req.session.userId
 	const cocktailId = req.params.id
 	Cocktail.findById(cocktailId)
+		.populate("reviews.author", "username")
 		.then(cocktail => {
 			res.render('cocktails/review', { cocktail, username, loggedIn, userId })
 		})
@@ -118,6 +119,8 @@ router.get('/:id/edit', (req, res) => {
 
 // update route
 router.put('/:id', (req, res) => {
+	const ingArr = req.body.ingredients.split(',')
+	req.body.ingredients = ingArr
 	const cocktailId = req.params.id
 	console.log('this is the request body in update', req.body)
 	Cocktail.findById(cocktailId)
@@ -154,6 +157,7 @@ router.delete('/:id', (req, res) => {
 router.get('/:id', (req, res) => {
 	const cocktailId = req.params.id
 	Cocktail.findById(cocktailId)
+		.populate("reviews.author", "username")
 		.then(cocktail => {
             const {username, loggedIn, userId} = req.session
 			res.render('cocktails/show', { cocktail, username, loggedIn, userId })

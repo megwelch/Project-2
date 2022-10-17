@@ -8,7 +8,7 @@ const { Schema } = mongoose
 // comment schema
 const reviewSchema = new Schema ({
     rating: {
-        type: Number,
+        type: String,
         required: true
     },
     comment: {

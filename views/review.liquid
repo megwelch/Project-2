@@ -1,13 +1,13 @@
 {% block content %}
-    <div class="card mb-4 shadow">
-        <div class="card-body">
-            <p>{{ review.rating}}</p>
-            <p>{{ review.comment }}</p>
+    <div class="mb-4">
+        <div class="review-card card-body text-left">
+            <p class="review-content">Rating: {{ review.rating}}</p>
+            <p class="review-content">Review: {{ review.comment }}</p>
             <div class="d-flex justify-content-between">
-                <small>author: {{ review.username }}</small>
+                <p class="review-content">User: {{ review.author.username }}</p>
                 {% if review.author == userId %}
                     <form action="/reviews/delete/{{cocktail.id}}/{{review.id}}?_method=DELETE" method="POST">
-                        <input class="btn btn-danger" type="submit" value="X">
+                        <input class="btn review-delete-btn" type="submit" value="Delete Review">
                     </form>
                 {% endif %}
             </div>

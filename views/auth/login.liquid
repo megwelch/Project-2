@@ -1,7 +1,33 @@
 {% layout 'layout.liquid' %}
 {% block content %}
+    <div class="container-sm form-container auth-container">
+        <form class="form-group" action="/auth/login" method="POST">
+            <fieldset>
+                <legend class="form-title">Sign In</legend>
+                <label class="form-label auth-label">Username: </label>
+                <input 
+                    type="text" 
+                    name="username" 
+                    placeholder="Username"
+                    class="form-control"
+                    required
+                >
+                <label class="form-label auth-label">Password:</label>
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="Password" 
+                    class="form-control"
+                    required
+                >
+            </fieldset>
+            <div class="text-center">
+                <input type="submit" value="Sign In" class="btn new-edit-btn justify-content-center">
+            </div>
+        </form>
+    </div>
 
-<div class="container-sm">
+{%- comment -%} <div class="container-sm">
     <form action="/auth/login" method="POST">
         <fieldset>
             <legend>Welcome Back, Please log in to continue</legend>
@@ -12,6 +38,6 @@
         </fieldset>
         <input type="submit" value="Log In" class="btn btn-success">
     </form>
-</div>
+</div> {%- endcomment -%}
 
 {% endblock %}

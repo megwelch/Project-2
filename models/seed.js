@@ -22,7 +22,7 @@ db.on('open', () => {
             name:'Old-Fashioned',
             image: 'https://i.imgur.com/XxnqmkF.png',
             spirit: 'whiskey',
-            ingredients: ['1 tsp sugar', '3 dashes of bitters', '1 tsp water, 2oz bourbon, orange twist'],
+            ingredients: ['1 tsp sugar', '3 dashes of bitters', '1 tsp water', '2oz bourbon', 'orange twist'],
             recipe: 'Add the sugar and bitters into a mixing glass, then add the water, and stir until the sugar is nearly dissolved. Fill the mixing glass with ice, add the bourbon, and stir until well-chille. Strain into a rocks glass over one large ice cube. Express the oil of an orange twist over the glass, then drop into the glass to garnish',
         },
         {
