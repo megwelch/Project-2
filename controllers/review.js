@@ -46,7 +46,9 @@ router.post("/:cocktailId", (req, res) => {
 })
 
 // DELETE
+//Your comments are way better on this file! Great job. 
 // only the author of the comment can delete it
+//In your other routes, you put the ID first in your path. Try to be more consistent with that. 
 router.delete('/delete/:cocktailId/:reviewId', (req, res) => {
     // isolate the ids and save to vars for easy ref
     const cocktailId = req.params.cocktailId 
@@ -57,7 +59,9 @@ router.delete('/delete/:cocktailId/:reviewId', (req, res) => {
             // get the comment
             // subdocs have a built in method that you can use to access specific subdocuments when you need to.
             // this built in method is called .id()
+            // Nice use of .id here
             const theReview = cocktail.reviews.id(reviewId)
+            // Try to be consistent with "review" vs. "comment", even in your console.logs
             console.log('this is the comment that was found', theReview)
             // make sure the user is logged in
             if (req.session.loggedIn) {
@@ -84,6 +88,7 @@ router.delete('/delete/:cocktailId/:reviewId', (req, res) => {
 
 })
 
+//You should have an update route for your reviews.
 //////////////////////////////////////////
 // Export the Router
 //////////////////////////////////////////

@@ -4,7 +4,7 @@ body{
 }
 
 
-
+/* There's a lot of CSS here. Let's try to make it drier next time! */
 /* main index */
 .mixie-container {
     margin-top: 100px;
@@ -121,11 +121,13 @@ body{
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* I loved your animations on this project! They looked great. */
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
   
   /* Position the front and back side */
+  /* This is a great example of a way to make your CSS shorter, take advatage of it more! */
   .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
