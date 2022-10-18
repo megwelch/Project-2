@@ -7,9 +7,6 @@
         <div class="card index-card text-center m-4" style="width: 18rem;">
             <h5 class="card-text index-title">{{ cocktail.name }}</h5>
             <div class="card-body">
-                {%- comment -%} <p class="card-text">
-                Spirit: {{ cocktail.spirit }}
-                </p> {%- endcomment -%}
                 {% if cocktail.image.length > 0 %}
                     <div class="cocktail-img-container">
                         <img class="cocktail-img m-3" src="{{ cocktail.image }}" alt="image of a {{cocktail.name}}">
@@ -17,17 +14,6 @@
                 {% else %}
                     <img class="cocktail-img" src="{{ cocktail.image }}" style="display:none">
                 {% endif %}
-                {%- comment -%} <p class="card-text">
-                    Ingredients:
-                    <ul>
-                        {% for ingredient in cocktail.ingredients %}
-                        <li>{{ ingredient }}</li>
-                        {% endfor %}
-                    </ul>
-                </p>
-                <p class="card-text">
-                    Recipe: {{ cocktail.recipe }}
-                </p> {%- endcomment -%}
                 <br>
                 <a href="/cocktails/{{ cocktail.id }}" class="btn view-btn">
                     View {{ cocktail.name }}

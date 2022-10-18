@@ -1,6 +1,8 @@
 # MIXIES
 ![title](./images/mixies.png)
 
+Deployed Url: https://mixies.fly.dev/spirits
+<br>
 Overview:
 <br>
 Mixies is a fullstack application that provides the user with all of the information they need to create delicious cocktails. The user has the ability to make an account, create and save their own cocktail creations, and leave reviews on existing cocktail recipes.

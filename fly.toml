@@ -10,7 +10,7 @@ processes = []
 
 [env]
   PORT = "8080"
-    SECRET = "nsqn9b95fndks09c6nf"
+  SECRET = "nsqn9b95fndks09c6nf"
   DEPLOYED_URL = "mongodb+srv://megwelch:harrypotter@harrypotterapp.eyppime.mongodb.net/Project-2?retryWrites=true&w=majority"
 
 [experimental]
