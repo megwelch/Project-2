@@ -16,6 +16,7 @@ const cocktailSchema = new Schema(
 		image: String,
 		spirit: { 
 			type: String, 
+			// Nice use of enum here!
 			enum: ['gin', 'rum', 'tequila', 'vodka', 'whiskey'], 
 		},
         ingredients: Array,

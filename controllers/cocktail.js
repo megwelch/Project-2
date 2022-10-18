@@ -14,7 +14,7 @@ const router = express.Router()
 // Routes
 ////////////////////////////////////////////
 // index ALL
-
+// Make sure you're labelling your code correctly and using your code comments in a way that makes it easier for other developers to read. Here should be labelled as your filter, 
 router.get('/byspirit', (req, res) => {
 	const spirit = req.query.spirit
 	Cocktail.find({'spirit': spirit})
@@ -30,7 +30,7 @@ router.get('/byspirit', (req, res) => {
 			res.redirect(`/error?error=${error}`)
 		})
 })
-
+// and here should be labelled as your index all.
 router.get('/', (req, res) => {
 	Cocktail.find({})
 		.then(cocktails => {
@@ -97,6 +97,7 @@ router.get('/:id/review', (req, res) => {
     const userId = req.session.userId
 	const cocktailId = req.params.id
 	Cocktail.findById(cocktailId)
+	//Good use of populate here
 		.populate("reviews.author", "username")
 		.then(cocktail => {
 			res.render('cocktails/review', { cocktail, username, loggedIn, userId })
@@ -121,9 +122,11 @@ router.get('/:id/edit', (req, res) => {
 
 // update route
 router.put('/:id', (req, res) => {
+	//Great feature! And good variable names.
 	const ingArr = req.body.ingredients.split(',')
 	req.body.ingredients = ingArr
 	const cocktailId = req.params.id
+	//When the app is finished, make sure you comment out your console logs. But you did a great job with using them and adding strings to keep track of them.
 	console.log('this is the request body in update', req.body)
 	Cocktail.findById(cocktailId)
 		.then(cocktail => {
@@ -161,6 +164,7 @@ router.get('/:id', (req, res) => {
 	Cocktail.findById(cocktailId)
 		.populate("reviews.author", "username")
 		.then(cocktail => {
+			//Good use of destructuring syntax
             const {username, loggedIn, userId} = req.session
 			res.render('cocktails/show', { cocktail, username, loggedIn, userId })
 		})
