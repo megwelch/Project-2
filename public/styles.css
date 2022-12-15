@@ -1,36 +1,31 @@
 body{
     font-family: Roboto Slab;
-    /* background-color: rgba(93, 173, 230, 0.2); */
 }
 
-
-
-/* main index */
 .mixie-container {
-    margin-top: 100px;
-}
-
-.mixie-image-container {
-    /* margin-left: 30px; */
+    display: flex;
+    flex-direction: row;
+    width: 75vw;
+    margin: 100px auto;
+    gap: 30px;
 }
 
 .mixie-description-container {
-    width: 45%;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-self: center;
+    margin-top: -30px;
 }
 
-.welcome {
-    margin-top: 40px;
-    padding-bottom: 10px;
-    margin-left: 27px;
-}
-
-.mixie-para {
-    font-size: 20px;
-    margin: 20px 55px 20px 20px;
-    border-top: black solid 2px;
-    padding-top: 30px;
-    padding-left: 5px;
+.mixie-image-container {
+    height: 400px;
+    width: 700px;
+    background-image: url('https://i.imgur.com/w2l3I65.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -42,18 +37,7 @@ body{
     text-decoration: none;
     padding: 0;
     margin: 0;
-}
-
-.navbar-brand:hover {
-    color: #1bf5af;
-}
-
-.nav-link {
-    color: white;
-}
-
-.nav-link:hover {
-    color: #1bf5af;
+    align-self: center;
 }
 
 .navbar {
@@ -102,10 +86,9 @@ body{
 
 /* Spirits */
 .flip-card {
-    /* background-color: transparent; */
     width: 300px;
     height: 200px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
     display: flex;
     align-items: center;
   }
@@ -130,20 +113,12 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
   
-  /* Style the front side (fallback if image is missing) */
-  /* .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  } */
-  
   /* Style the back side */
   .flip-card-back {
-    /* background-color: dodgerblue;
-    color: white; */
     transform: rotateY(180deg);
     margin-top: 70%;
   }
@@ -172,45 +147,6 @@ body{
     gap: 150px;
 }
 
-/* .spirit-img {
-    object-fit: contain;
-}
-
-#whiskey {
-    background-image: url('https://i.imgur.com/XxnqmkF.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-#tequila {
-    background-image: url('https://i.imgur.com/kBsnTOU.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-#vodka {
-    background-image: url('https://i.imgur.com/xpLmVp6.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-#rum {
-    background-image: url('https://i.imgur.com/zC4M8fZ.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-#gin {
-    background-image: url('https://i.imgur.com/qIuCFCM.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-} */
-
 .spirit-row-1 {
     width: 700px;
 }
@@ -220,23 +156,6 @@ body{
     margin-top: 50px;
     margin-left: 120px;
 }
-
-/* .spirit-link-container {
-    width: 210px;
-    display: flex;
-    align-items: center;
-    padding:10px;
-    margin-top: 10px;
-} */
-
-/* .spirit-link-container:hover {
-    color: #247291;
-    background-color:#1bf5af;
-}
-
-.spirit-link:hover{
-    color: #247291;
-} */
 
 .spirit-link {
     padding: 30px;
@@ -269,6 +188,7 @@ body{
 .card {
     border: solid 5px #4f7097;
     border-radius: 5px;
+    margin: 10px;
 }
 
 .index-title {
@@ -303,12 +223,14 @@ body{
 
 /* show */
 .show-card {
+    display: flex;
+    flex-direction: row;
     min-width: 700px; 
     max-width: 900px;
-    max-height: 500px;
+    max-height: 550px;
     border: #4f7097 solid 4px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin: 0px auto 10px;
 }
 
 .show-title {
@@ -331,8 +253,8 @@ body{
 .show-img {
     width: auto;
     height: auto;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90%;
+    max-height: 90%;
     padding: 30px;
 }
 
@@ -442,4 +364,143 @@ body{
 
 span {
     font-family: monoton;
+}
+
+@media (max-width: 800px) {
+    body {
+        width: 100vw;
+    }
+
+    .navbar {
+        width: 100vw;
+    }
+
+    .navbar-brand {
+        font-size: 40px;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;..");
+    }
+
+    #navbarNav {
+        background-color: #4f7097;
+        justify-content: end;
+        z-index: 99;
+    }
+
+    .mixie-container {
+        width: 100vw;
+        flex-direction: column;
+    }
+
+    .mixie-description-container {
+        width: 90vw;
+        text-align: center;
+    }
+
+    .mixie-image-container {
+        width: 90vw;
+        margin: auto;
+    }
+
+    .ben-franklin {
+        object-fit: cover;
+    }
+
+    .form-container {
+        width: 80%;
+    }
+
+    .new-edit-btn {
+        width: 80%;
+        font-size: 15px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .form-label {
+        font-size: 15px;
+    }
+
+    .form-control {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+
+    .index-card {
+        max-width: 170px;
+        margin: 5px;
+    }
+
+    .cocktail-img {
+        height: 130px;
+    }
+
+    .cocktail-title, .spirits-title{
+        font-size: 30px;
+    }
+
+    .index-title {
+        font-size: 20px;
+    }
+
+    .view-btn {
+        width: 100%;
+        font-size: 11px;
+        word-wrap: wrap;
+    }
+
+    .spirits-container {
+        width: 100vw;
+    }
+
+    .spirit-row-1, .spirit-row-2 {
+        flex-direction: column;
+        margin: 10px;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+    }
+
+    .spirit-row-2 {
+        margin-top: 100px;
+    }
+
+    .show-card {
+        flex-direction: column-reverse;
+        min-width: 70vw;
+        margin-top: 400px;
+        max-height: unset;
+    }
+
+    .show-img {
+        max-height: 300px;
+    }
+
+    .info-container {
+        width: 90vw;
+        margin: auto;
+    }
+
+    .show-title {
+        width: 90vw;
+        margin-bottom: 20px;
+    }
+
+    .title-div {
+        margin: auto;
+    }
+
+    .review-card {
+        width: 90vw;
+    }
+
+    .review-delete-btn {
+        font-size: 12px;
+        width: 100px;
+    }
 }

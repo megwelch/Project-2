@@ -1,13 +1,14 @@
 {% layout 'layout.liquid' %}
 {% block content %}
 <container class="show-page">
-    <div class="d-flex justify-content-center">
-        <container class="show-card mt-5 col d-flex justify-content-center">
+    <div class="">
+        <container class="show-card mt-5 justify-content-center">
             <div class="show-img-container">
                 <img class="show-img" src="{{ cocktail.image}}" alt="picture of {{ cocktail.name}}">
             </div>
-            <div class="info-container">
-                <h1 class="show-title">{{ cocktail.name }}</h1>
+            <div class="info-container"> 
+                 <h1 class="show-title text-center">{{ cocktail.name }}</h1>
+            
                 <h2 class="ingredients">Ingredients:</h2>
                     <ul>
                         {% for ingredient in cocktail.ingredients %}

@@ -1,37 +1,39 @@
 {% block content %}
-<nav class="navbar navbar-expand-md">
-    <div class="container-fluid">
-        <a href="/" class="navbar-brand">MIXIES</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            {% if loggedIn %}
-                <a href="/cocktails/mine" class="nav-link justify-content-end">Hello, {{ username }}</a>
-                <a href="/cocktails/new" class="nav-link">New</a>
-                <a href="/cocktails/mine" class="nav-link">My Cocktails</a>
-                <a href="/auth/logout" class="nav-link">Log Out</a>
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    View Cocktails</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/spirits">View By Spirit</a></li>
-                            <li><a class="dropdown-item" href="/cocktails">View All Cocktails</a></li>
-                        </ul>
-                </div>
-            {% else %}
-                <a href="/auth/signup" class="nav-link">Sign Up</a>
-                <a href="/auth/login" class="nav-link">Sign In</a>
-                <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    View Cocktails</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/spirits">View By Spirit</a></li>
-                            <li><a class="dropdown-item" href="/cocktails">View All Cocktails</a></li>
-                        </ul>
-                </div>
-            {% endif %}
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand align-middle">MIXIES</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {% if loggedIn %}
+                    <a href="/cocktails/mine" class="nav-link justify-content-end">Hello, {{ username }}</a>
+                    <a href="/cocktails/new" class="nav-link">New Cocktail</a>
+                    <a href="/cocktails/mine" class="nav-link">My Cocktails</a>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        View Cocktails</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/spirits">View By Spirit</a></li>
+                                <li><a class="dropdown-item" href="/cocktails">View All Cocktails</a></li>
+                            </ul>
+                    </div>
+                    <a href="/auth/logout" class="nav-link">Log Out</a>
+                {% else %}
+                    <a href="/auth/signup" class="nav-link">Sign Up</a>
+                    <a href="/auth/login" class="nav-link">Sign In</a>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        View Cocktails</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/spirits">View By Spirit</a></li>
+                                <li><a class="dropdown-item" href="/cocktails">View All Cocktails</a></li>
+                            </ul>
+                    </div>
+                {% endif %}
+            </ul>
+          </div>
         </div>
-    </div>
-</nav>
+      </nav>
 {% endblock %}
